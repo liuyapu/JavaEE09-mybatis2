@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.class09.dao.StudentDao">
+    <!-- SQL语句 -->
+    <select id="getStudentList" resultType="org.mybatis.class09.model.Student">
+        select * from s_student;
+    </select>
+    <select id="loginstudent" resultType="org.mybatis.class09.model.Student">
+        select * from s_student where student_id = #{student_id} and student_password = #{student_password}
+    </select>
+    <select id="getTeacherHomeworkList" resultType="org.mybatis.class09.model.TeacherHomework">
+        select * from s_homework;
+    </select>
+    <update id="updateHomework" parameterType="org.mybatis.class09.model.StudentHomework">
+        update s_student_homework set homework_content = #{homework_content},
+                                    update_time = #{update_time}
+        where homework_id = #{homework_id} and student_id = #{student_id}
+    </update>
+    <insert id="insertStudentHomework" parameterType="org.mybatis.class09.model.StudentHomework">
+        insert into s_student_homework (homework_id,student_id,homework_title,homework_content,create_time,update_time)
+        values(#{homework_id},#{student_id},#{homework_title},#{homework_content},#{create_time},#{update_time});
+    </insert>
+</mapper>
