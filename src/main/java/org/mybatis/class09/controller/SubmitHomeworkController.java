@@ -26,7 +26,6 @@ public class SubmitHomeworkController {
 
         //使用mybatis获取sqlSessionFactory对象
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-
         StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
         //新建一个StudentHomework对象,用于存储待提交的作业
         StudentHomework sh = new StudentHomework();

@@ -12,6 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-  <h1>作业提交成功</h1>
+  <h1>提交成功</h1>
 </body>
 </html>

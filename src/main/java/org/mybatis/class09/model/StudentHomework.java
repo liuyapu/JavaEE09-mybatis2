@@ -10,6 +10,15 @@ public class StudentHomework {
     private String homework_title;
     private Date create_time;
     private Date update_time;
+    private int score;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     public StudentHomework() {
     }

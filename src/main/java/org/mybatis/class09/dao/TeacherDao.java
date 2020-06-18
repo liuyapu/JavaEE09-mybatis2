@@ -14,4 +14,5 @@ public interface TeacherDao {
     Teacher loginTeacher(@Param("teacher_id") Long teacher_id, @Param("teacher_password") String teacher_password);
     int adds(Student student);
     int addh(TeacherHomework teacherHomework);
+    int reviewHomework(StudentHomework studentHomework);
 }

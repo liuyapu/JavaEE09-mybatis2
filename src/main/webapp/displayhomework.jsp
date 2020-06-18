@@ -31,6 +31,8 @@
         <td>作业标题</td>
         <td>作业内容</td>
         <td>创建时间</td>
+        <td>作业分数</td>
+        <td>分数批改</td>
     </tr>
     <%
         List<StudentHomework> list = (List<StudentHomework>) request.getSession().getAttribute("homeworklist");
@@ -42,14 +44,18 @@
             for(StudentHomework sh : list){
 
     %>
-    <tr align="center" bgcolor="white" height = "30">
+    <form method="post" action="/submit/review">
+        <tr align="center" bgcolor="white" height = "30">
 
-        <td><%=sh.getHomework_id()%></td>
-        <td><%=sh.getStudent_id()%></td>
-        <td><%=sh.getHomework_title()%></td>
-        <td><%=sh.getHomework_content()%></td>
-        <td><%=sh.getCreate_time()%></td>
-    </tr>
+            <td><input name="homeworkid" value="<%=sh.getHomework_id()%>" readonly="readonly"></td>
+            <td><input name="studentid" value="<%=sh.getStudent_id()%>" readonly="readonly"></td>
+            <td><input name="homeworktitle" value="<%=sh.getHomework_title()%>" readonly="readonly"></td>
+            <td><input name="homeworkcontent" value="<%=sh.getHomework_content()%>" readonly="readonly"></td>
+            <td><input name="create_time" value="<%=sh.getCreate_time()%>" readonly="readonly"></td>
+            <td><input name="score" type="number" min="0" max="100" value="<%=sh.getScore()%>"></td>
+            <td><input name="submit" type="submit" value="提交分数" /></td>
+        </tr>
+    </form>
     <%
             }
         }

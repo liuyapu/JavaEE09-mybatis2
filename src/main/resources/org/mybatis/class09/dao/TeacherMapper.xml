@@ -16,4 +16,8 @@
     <insert id="addh" parameterType="org.mybatis.class09.model.TeacherHomework">
         insert into s_homework(homework_id,title,content,create_time) values(#{homework_id},#{title},#{content},#{create_time})
     </insert>
+    <update id="reviewHomework" parameterType="org.mybatis.class09.model.StudentHomework">
+        update s_student_homework set score = #{score}
+        where homework_id = #{homework_id} and student_id = #{student_id}
+    </update>
 </mapper>

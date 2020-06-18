@@ -19,7 +19,7 @@
         where homework_id = #{homework_id} and student_id = #{student_id}
     </update>
     <insert id="insertStudentHomework" parameterType="org.mybatis.class09.model.StudentHomework">
-        insert into s_student_homework (homework_id,student_id,homework_title,homework_content,create_time,update_time)
-        values(#{homework_id},#{student_id},#{homework_title},#{homework_content},#{create_time},#{update_time});
+        insert into s_student_homework (homework_id,student_id,homework_title,homework_content,create_time,update_time,score)
+        values(#{homework_id},#{student_id},#{homework_title},#{homework_content},#{create_time},#{update_time},0);
     </insert>
 </mapper>
